@@ -1,0 +1,1 @@
+docker run -it -v `pwd`:/code -p 4000:4000 --name slido marcelocg/phoenix
