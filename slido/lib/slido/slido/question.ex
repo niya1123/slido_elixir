@@ -4,8 +4,8 @@ defmodule Slido.Slido.Question do
 
 
   schema "questions" do
-    field :content, :string
     field :name, :string
+    field :question, :string
 
     timestamps()
   end
@@ -13,7 +13,7 @@ defmodule Slido.Slido.Question do
   @doc false
   def changeset(question, attrs) do
     question
-    |> cast(attrs, [:name, :content])
-    |> validate_required([:name, :content])
+    |> cast(attrs, [:name, :question])
+    |> validate_required([:name, :question])
   end
 end

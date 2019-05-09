@@ -6,9 +6,9 @@ defmodule Slido.SlidoTest do
   describe "questions" do
     alias Slido.Slido.Question
 
-    @valid_attrs %{content: "some content", name: "some name"}
-    @update_attrs %{content: "some updated content", name: "some updated name"}
-    @invalid_attrs %{content: nil, name: nil}
+    @valid_attrs %{name: "some name", question: "some question"}
+    @update_attrs %{name: "some updated name", question: "some updated question"}
+    @invalid_attrs %{name: nil, question: nil}
 
     def question_fixture(attrs \\ %{}) do
       {:ok, question} =
@@ -31,8 +31,8 @@ defmodule Slido.SlidoTest do
 
     test "create_question/1 with valid data creates a question" do
       assert {:ok, %Question{} = question} = Slido.create_question(@valid_attrs)
-      assert question.content == "some content"
       assert question.name == "some name"
+      assert question.question == "some question"
     end
 
     test "create_question/1 with invalid data returns error changeset" do
@@ -43,8 +43,8 @@ defmodule Slido.SlidoTest do
       question = question_fixture()
       assert {:ok, question} = Slido.update_question(question, @update_attrs)
       assert %Question{} = question
-      assert question.content == "some updated content"
       assert question.name == "some updated name"
+      assert question.question == "some updated question"
     end
 
     test "update_question/2 with invalid data returns error changeset" do

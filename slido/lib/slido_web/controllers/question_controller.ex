@@ -2,7 +2,7 @@ defmodule SlidoWeb.QuestionController do
   use SlidoWeb, :controller
 
   alias Slido.Slido
-  alias Slido.Slido.Question
+  alias Slido.Question
 
   action_fallback SlidoWeb.FallbackController
 

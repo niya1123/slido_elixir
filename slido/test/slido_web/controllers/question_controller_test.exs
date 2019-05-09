@@ -4,9 +4,9 @@ defmodule SlidoWeb.QuestionControllerTest do
   alias Slido.Slido
   alias Slido.Slido.Question
 
-  @create_attrs %{content: "some content", name: "some name"}
-  @update_attrs %{content: "some updated content", name: "some updated name"}
-  @invalid_attrs %{content: nil, name: nil}
+  @create_attrs %{name: "some name", question: "some question"}
+  @update_attrs %{name: "some updated name", question: "some updated question"}
+  @invalid_attrs %{name: nil, question: nil}
 
   def fixture(:question) do
     {:ok, question} = Slido.create_question(@create_attrs)
@@ -32,8 +32,8 @@ defmodule SlidoWeb.QuestionControllerTest do
       conn = get conn, question_path(conn, :show, id)
       assert json_response(conn, 200)["data"] == %{
         "id" => id,
-        "content" => "some content",
-        "name" => "some name"}
+        "name" => "some name",
+        "question" => "some question"}
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
@@ -52,8 +52,8 @@ defmodule SlidoWeb.QuestionControllerTest do
       conn = get conn, question_path(conn, :show, id)
       assert json_response(conn, 200)["data"] == %{
         "id" => id,
-        "content" => "some updated content",
-        "name" => "some updated name"}
+        "name" => "some updated name",
+        "question" => "some updated question"}
     end
 
     test "renders errors when data is invalid", %{conn: conn, question: question} do

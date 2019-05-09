@@ -4,7 +4,7 @@ defmodule Slido.Repo.Migrations.CreateQuestions do
   def change do
     create table(:questions) do
       add :name, :string
-      add :content, :text
+      add :question, :text
 
       timestamps()
     end

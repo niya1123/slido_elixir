@@ -13,6 +13,6 @@ defmodule SlidoWeb.QuestionView do
   def render("question.json", %{question: question}) do
     %{id: question.id,
       name: question.name,
-      content: question.content}
+      question: question.question}
   end
 end
