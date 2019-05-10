@@ -36,7 +36,7 @@ defmodule SlidoWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_slido_key",
-    signing_salt: "SvZjPcmG"
+    signing_salt: "ID6q1L6a"
 
   plug SlidoWeb.Router
 

@@ -1,0 +1,32 @@
+cd slido
+config/dev.exsに  template: "template0", # 追加
+mix ecto.create
+mix phx.gen.json Slido Question questions name:string question:text
+routeの設定
+lib/controllers/hoge_controller.exの5行目あたりの
+alias Hoge.Hoge.Fooを
+alias Hoge.Fooに変更する
+mix phx.routesで通ってるか確認
+iex -S mix phx.server
+lib/hoge_web/templates/layout/app.html.eexに
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+を追加
+priv/static/app.jsに
+var app = new Vue({
+    el: '[role="main"]',
+    data: {
+      questions: []
+    },
+    created: function() {
+      axios.get('/questions').then(function(response){
+        app.questions = response.data.data;
+      });
+    }
+});
+lib/hoge_web/templates/page/index.html.eexに
+<div v-for="question in questions">
+  <h2>{{ question.name }}</h2>
+  <pre>{{ question.question }}</pre>
+  <hr>
+</div>

@@ -12,7 +12,7 @@ config :slido,
 # Configures the endpoint
 config :slido, SlidoWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "OajkG5dnyO12AA29OZtuiK84NiMfJPh7Xh72M47w4RszakY9oSgeO/VEzQquANCR",
+  secret_key_base: "v37mm7+2cHq+icRCEwi7dHjmt4h9WzC9ko5vWEsNRg0G+t601x6EMwgU1viJ77xz",
   render_errors: [view: SlidoWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Slido.PubSub,
            adapter: Phoenix.PubSub.PG2]

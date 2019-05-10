@@ -34,9 +34,3 @@
     </ul>
   </div>
 </div>
-
-<div v-for="question in questions">
-  <h2>{{ question.title }}</h2>
-  <pre>{{ question.body }}</pre>
-  <hr>
-</div>
